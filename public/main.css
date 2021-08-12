@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Georama:wght@300;400&display=swap');
+*{margin:0; padding:0; box-sizing: border-box; font-family: 'Georama', sans-serif;}
+body {background-color:black}
+li{display: flex; align-items: center; padding:  8px 5px; border-bottom: 1px solid currentColor}
+li:last-child{border: none;}
+.datoMåned{display: flex; flex-direction:column; text-align: center; justify-content: center; align-items: center; }
+.dato{font-size: 1.5rem}
+.overskrift{font-weight: 400; font-size: 1.2rem;}
+.overskriftStedFraTil{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 5px;
+
+}
+ul{
+
+    border:1px solid currentColor;
+    display: inline-block;
+    width: 100%;
+    
+
+}
+.sted{font-size:.5; opacity: .8;}
+

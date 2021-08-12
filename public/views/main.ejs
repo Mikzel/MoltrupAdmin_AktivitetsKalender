@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6dfa6f1a44.js" crossorigin="anonymous" ></script>
+    <link rel="stylesheet" href="main.css">
+
+  
+    <title>Document</title>
+</head>
+<body style="color:<%= farve %>">
+    <ul>
+        <% for(let i = 0; i < antal; i++){ %>
+            <li>
+                <div class="datoMåned">
+                    <p class="dato"><%-kalenderData[i].start.dateTime.split('T')[0].split('-')[2]%> </p>
+                    <p class="måned"><%-måneder[kalenderData[i].start.dateTime.split('T')[0].split('-')[1].replace('0','')]%> </p>    
+                </div>
+               <div class="overskriftStedFraTil">
+                    <p class="overskrift"><%-kalenderData[i].summary%></p>
+                    <%if (kalenderData[i].location){%>
+                        <p class="sted"><i class="far fa-compass"></i> <%-kalenderData[i].location%></p> 
+                    <%}%>
+                    <p class="fraTil"><%-kalenderData[i].start.dateTime.split('T')[1].substring(0,kalenderData[i].start.dateTime.length-kalenderData[i].start.dateTime.lastIndexOf(':')+2)%> - 
+                        
+                        <%if (kalenderData[i].start.dateTime.split('T')[0] != kalenderData[i].end.dateTime.split('T')[0]){%>
+                            <%-kalenderData[i].end.dateTime.split('T')[0].split('-')[2]%>. <%-måneder[kalenderData[i].end.dateTime.split('T')[0].split('-')[1].replace('0','')]%>.
+                        <%}%>
+                        <%-kalenderData[i].end.dateTime.split('T')[1].substring(0,kalenderData[i].end.dateTime.length-kalenderData[i].end.dateTime.lastIndexOf(':')+2)%>
+                       
+                    </p>     
+                </div>
+            </li>
+        <%}%>
+    </ul>
+</body>
+</html>
+
